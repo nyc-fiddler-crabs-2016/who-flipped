@@ -1,7 +1,7 @@
 class CreateSubmissions < ActiveRecord::Migration
   def change
     create_table :submissions do |t|
-      t.integer :arist_id
+      t.integer :artist_id
       t.integer :album_id
       t.integer :song_id
       t.integer :sample_id
