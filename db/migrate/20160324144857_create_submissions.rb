@@ -5,7 +5,7 @@ class CreateSubmissions < ActiveRecord::Migration
       t.integer :album_id
       t.integer :song_id
       t.integer :sample_id
-      t.integer :user_id
+      t.integer :user_id, null: false, index: true
 
       t.timestamps null: false
     end
