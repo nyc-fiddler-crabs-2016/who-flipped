@@ -1,0 +1,8 @@
+<div>
+		<h3><%= link_to genre.name, genre%></h3>
+	<ul>
+		<% genre.artists.each do |artist| %>
+			<li><%= link_to artist.name, artist %></li>
+		<% end %>
+	</ul>
+</div>

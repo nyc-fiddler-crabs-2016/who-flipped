@@ -1,0 +1,8 @@
+<div>
+	<h3><%= artist.name %></h3>
+	<ul>
+		<% artist.albums.each do |album| %>
+			<li><%= link_to album.name, album %></li>
+		<% end %>
+	</ul>
+</div
