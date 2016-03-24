@@ -1,4 +1,5 @@
 class Album < ActiveRecord::Base
-	belongs_to :aritst
-	belongs_to :submission
+	belongs_to :artist
+	has_many :songs
+	has_many :submissions
 end

@@ -18,12 +18,20 @@ genres = ['Hip-Hop', 'Electronic', 'Rock', 'Soul', 'Jazz', 'Blues', 'Reggae', 'C
 genres.each do |name|
 	Genre.create(name: name)
 end
-
-15.times do
-	Artist.create(name: Faker::Book.author)
+Genre.all.each do |genre|
+	10.times do
+		genre.artists << Artist.create(name: Faker::Book.author)
+	end
 end
 
-35.times do
-	Album.create(name: Faker::Book.title, artist_id: rand(1..15))
+Artist.all.each do |artist|
+	5.times do
+		artist.albums << Album.new(name: Faker::Book.title, release_date: Faker::Date.between(50.years.ago, Date.today))
+	end
 end
 
+Album.all.each do |album|
+	rand(6..13).times do
+		album.songs << Song.new(name: Faker::Hipster.words(3, true, true).join(' '))
+	end
+end
